@@ -4,8 +4,16 @@
 //Bonus: Use a nested for loop to show the tables for every
 //multiplier from 1 to 10 (100 results total)
 
+//*****
 for (let i = 0; i <= 10; i++) {
   let multi = i * 9;
+}
+
+for (let multiplier = 0; multiplier <= 10; multiplier++) {
+  for (let i = 0; i <= 10; i++) {
+    let result = multiplier * i;
+    console.log(multiplier + " * " + i + " = " + result);
+  }
 }
 
 //Write a while loop that starts counting from 5.
@@ -24,17 +32,34 @@ while (i <= 50) {
 // For example: [2,7,5,9,8,7] should return 7; ********
 
 function duplicate(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
+  for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j]) {
         return arr[i];
-        // console.log(arr[i]);
       }
     }
   }
-  return -1; // if there is no duplicate
+  return -1;
 }
 
 //Remembering the results from the conditionals exercise on Monday
 // use the assignGrade function by logging every value from 60 to 100:
 //your log should show "For 88, you got a B" "For 90 you got an A"etc..
+
+function assignGrade(score) {
+  //****
+  if (score > 90) {
+    return "A";
+  } else if (score > 80) {
+    return "B";
+  } else if (score > 70) {
+    return "C";
+  } else if (score > 65) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+for (let i = 80; i <= 100; i++) {
+  console.log("For " + i + ", you got a " + assignGrade(i));
+}
